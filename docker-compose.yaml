@@ -1,0 +1,78 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: dev-db
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      - ./docker-entrypoint-initdb/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - 5050:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    depends_on:
+      - postgres
+
+  javascript:
+    container_name: javascript_container
+    image: ubuntu:22.04
+    ports:
+      - 7222:7222
+    volumes:
+      - ./app-entrypoints/entrypoint-javascript.sh:/entrypoint-javascript.sh
+      - ./app-languages/javascript:/app
+    environment:
+      - name=value
+    entrypoint: /entrypoint-javascript.sh
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 512M
+
+  python:
+    container_name: python_container
+    image: ubuntu:22.04
+    ports:
+      - 7222:7222
+    volumes:
+      - ./app-entrypoints/entrypoint-python.sh:/entrypoint-python.sh
+      - ./app-languages/python:/app
+    environment:
+      - name=value
+    entrypoint: /entrypoint-python.sh
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 512M
+
+  go:
+    container_name: go_container
+    image: ubuntu:22.04
+    ports:
+      - 7222:7222
+    volumes:
+      - ./app-entrypoints/entrypoint-go.sh:/entrypoint-go.sh
+      - ./app-languages/go:/app
+    environment:
+      - name=value
+    entrypoint: /entrypoint-go.sh
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 512M
