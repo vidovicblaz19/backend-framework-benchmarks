@@ -1,3 +1,6 @@
 postgres-data/
 node_modules
 __pycache__
+bin
+obj
+.vs
