@@ -76,3 +76,37 @@ services:
         limits:
           cpus: '2'
           memory: 512M
+
+  csharp:
+    container_name: csharp_container
+    image: ubuntu:22.04
+    ports:
+      - 7222:7222
+    volumes:
+      - ./app-entrypoints/entrypoint-csharp.sh:/entrypoint-csharp.sh
+      - ./app-languages/csharp:/app
+    environment:
+      - name=value
+    entrypoint: /entrypoint-csharp.sh
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 512M
+  
+  java:
+    container_name: java_container
+    image: ubuntu:22.04
+    ports:
+      - 7222:7222
+    volumes:
+      - ./app-entrypoints/entrypoint-java.sh:/entrypoint-java.sh
+      - ./app-languages/java:/app
+    environment:
+      - name=value
+    entrypoint: /entrypoint-java.sh
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 512M

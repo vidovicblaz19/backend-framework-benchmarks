@@ -14,13 +14,13 @@ CREATE TABLE IF NOT EXISTS customers (
 
 
 CREATE TABLE IF NOT EXISTS orders (
-    order_id smallint NOT NULL,
+    order_id int NOT NULL,
     customer_id bpchar,
-    employee_id smallint,
+    employee_id int,
     order_date date,
     required_date date,
     shipped_date date,
-    ship_via smallint,
+    ship_via int,
     freight real,
     ship_name character varying(40),
     ship_address character varying(60),
