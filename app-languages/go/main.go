@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"runtime"
 	"sync"
 
 	"github.com/jackc/pgx/v5/pgxpool"
@@ -139,7 +138,7 @@ func requestHandlerFunction(w http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	runtime.GOMAXPROCS(2) // Set the maximum number of CPU cores
+	//runtime.GOMAXPROCS(2) // Set the maximum number of CPU cores
 
 	var err error
 	db, err = pgxpool.New(context.Background(), "postgres://admin:admin@postgres:5432/dev-db")

@@ -31,7 +31,7 @@ function stressGarbageCollectorSort(arr) {
 
 if (cluster.isPrimary) {
     // Create a worker for each CPU
-    for (var i = 0; i < 2; i += 1) {
+    for (var i = 0; i < 12; i += 1) {
         cluster.fork();
     }
 } else {

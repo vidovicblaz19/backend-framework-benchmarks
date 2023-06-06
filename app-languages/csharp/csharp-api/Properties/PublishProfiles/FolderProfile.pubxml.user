@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\blazvidovic\Documents\Repos\backend-framework-benchmarks\app-languages\csharp\csharp-api\bin\Release\net7.0\publishout\</_PublishTargetUrl>
-    <History>True|2023-06-03T09:23:22.9064159Z;True|2023-06-03T11:18:17.6336032+02:00;False|2023-06-03T11:16:38.8448346+02:00;True|2023-06-03T11:12:20.8786598+02:00;True|2023-06-03T10:52:38.6536548+02:00;True|2023-06-03T10:51:50.6222685+02:00;True|2023-06-03T10:11:32.2781665+02:00;True|2023-06-02T19:01:28.7994209+02:00;True|2023-06-02T18:59:59.2602079+02:00;True|2023-06-02T18:33:12.6483973+02:00;True|2023-06-02T18:29:39.8965577+02:00;True|2023-06-02T18:29:14.0539880+02:00;True|2023-06-02T18:24:27.6447499+02:00;</History>
+    <_PublishTargetUrl>C:\Users\blazvidovic\Documents\Repos\backend-framework-benchmarks\app-languages\csharp\csharp-api\_ReleasePublish</_PublishTargetUrl>
+    <History>True|2023-06-06T13:34:13.6310491Z;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

@@ -1,2 +1,3 @@
-cd built
-dotnet csharp-api.dll
+cd toRun
+./csharp-api
+
