@@ -16,7 +16,6 @@ public class OrderRouter {
     @Bean
     public RouterFunction<ServerResponse> route(OrderService orderService) {
         return RouterFunctions
-                .route(GET("/").
-                        and(accept(MediaType.APPLICATION_JSON)), orderService::getResponse);
+                .route(GET("/"), orderService::getResponse);
     }
 }
